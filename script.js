@@ -109,8 +109,8 @@ class Player {
                     mapVelocityX = 0;
                     stop = true
                 }
-                if (g > 0 && floorArray[g-1].checkY < floorArray[g].checkY && this.x== floorArray[g].x && this.x + this.width >= floorArray[g].x && this.y + this.height >= floorArray[g-1].checkY && this.velocityX != speed) {
-                    this.x = floorArray[g].x +2
+                if (g > 0 && floorArray[g-1].checkY < floorArray[g].checkY && this.x <= floorArray[g].x + (speed) && this.x >= floorArray[g].x && this.x + this.width >= floorArray[g].x && this.y + this.height >= floorArray[g-1].checkY && this.velocityX != speed) {
+                    this.x = floorArray[g].x + 2
                     console.log("ds")
                     this.velocityX = 0;
                 }
@@ -139,7 +139,7 @@ class Player {
 
 let floorArray = []
 let floorArrayLeft = [];
-let boxWidth = 50;
+let boxWidth = 30;
 let grassHeight = 20
 class Floor {
     constructor(x, height, changer) {
